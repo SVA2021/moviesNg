@@ -1,0 +1,11 @@
+<mat-card class="movieCard">
+  <mat-card-content>
+    <img [src]="imgSrc" [alt]="movie.name" class="movieCard__img">
+    <mat-card-title class="movieCard__title">{{movie.name}}</mat-card-title>
+    <p class="movieCard__text">{{genreDescription}}</p>
+    <p class="movieCard__text">{{movie.year}} </p>
+  </mat-card-content>
+  <button mat-button (click)="setBestMovie($event)" class="movieCard__btn">
+    <mat-icon aria-hidden="false" aria-label="favorite">{{isFavorite ? 'favorite' : 'favorite_outline'}}</mat-icon>
+  </button>
+</mat-card>

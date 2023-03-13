@@ -1,0 +1,55 @@
+.movieCard {
+  position: relative;
+  padding: 15px 20px;
+  width: 190px;
+  max-width: 190px;
+  min-height: 400px;
+  background: #FFF;
+  box-shadow: 0 0 15px rgba(29, 24, 56, 0.1);
+  border-radius: 10px;
+
+  font-family: Montserrat, sans-serif;
+  font-style: normal;
+  font-size: 14px;
+  line-height: 16px;
+  color: #1D1838;
+
+  .movieCard__img {
+    margin-bottom: 10px;
+    padding: 0;
+    width: 150px;
+    height: 225px;
+    border-radius: 5px;
+  }
+
+  .mat-card-content {
+    margin-bottom: 10px;
+  }
+
+  .mat-card-title {
+    font-family: Montserrat, sans-serif;
+    font-style: normal;
+    font-size: 14px;
+    line-height: 16px;
+    margin-bottom: 10px;
+    font-weight: 600;
+  }
+
+  .movieCard__text:not(:last-child) {
+    margin-bottom: 10px;
+  }
+
+  .movieCard__btn {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    min-width: 0;
+    line-height: 48px;
+    padding: 0;
+  }
+}
+
+
