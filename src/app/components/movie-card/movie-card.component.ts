@@ -2,6 +2,8 @@ import {Component, Input, OnChanges, OnDestroy, OnInit, SimpleChanges} from '@an
 import {genresT, movieT} from "../../types/types";
 import {BestMovieService} from "../../services/best-movie.service";
 import {Subscription} from "rxjs";
+import {MatDialog} from "@angular/material/dialog";
+import {DetailedMovieComponent} from "../detailed-movie/detailed-movie.component";
 
 @Component({
   selector: 'app-movie-card',
@@ -18,6 +20,7 @@ export class MovieCardComponent implements OnInit, OnChanges, OnDestroy {
 
   constructor(
     private best: BestMovieService,
+    public  dialog: MatDialog,
   ) {
     this.myBestMovie$ = Subscription.EMPTY;
     this.imgSrc = '';
@@ -37,6 +40,10 @@ export class MovieCardComponent implements OnInit, OnChanges, OnDestroy {
   setBestMovie(event: Event) {
     event.stopPropagation();
     this.best.setBestMovie(this.movie);
+  }
+
+  openDetailedMovie() {
+    this.dialog.open(DetailedMovieComponent, {data: this.movie});
   }
 
   ngOnChanges(changes: SimpleChanges): void {

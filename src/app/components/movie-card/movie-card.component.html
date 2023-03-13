@@ -1,4 +1,4 @@
-<mat-card class="movieCard">
+<mat-card class="movieCard" (click)="openDetailedMovie()">
   <mat-card-content>
     <img [src]="imgSrc" [alt]="movie.name" class="movieCard__img">
     <mat-card-title class="movieCard__title">{{movie.name}}</mat-card-title>
