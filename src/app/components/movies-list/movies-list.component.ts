@@ -22,6 +22,8 @@ export class MoviesListComponent implements OnInit, OnDestroy, AfterContentCheck
   movieData$: Subscription
   genreFilter: genresT | undefined
   genreFilteredMovieList: movieT[]
+  movieNameFilter: string | undefined
+  nameFilteredMovieList: movieT[]
 
   constructor(
     private movies: MoviesListService,
@@ -30,14 +32,23 @@ export class MoviesListComponent implements OnInit, OnDestroy, AfterContentCheck
     this.movieData$ = Subscription.EMPTY;
     this.genreFilter = undefined;
     this.genreFilteredMovieList = [];
+    this.movieNameFilter = undefined;
+    this.nameFilteredMovieList = [];
   }
 
+  private updateFilteredArray() {
+    this.genreFilteredMovieList = this.genreFilter
+      ? this.moviesList.filter((v) => v.genre.includes(this.genreFilter!))
+      : this.moviesList;
+
+    this.nameFilteredMovieList = this.movieNameFilter
+      ? this.genreFilteredMovieList.filter((v) => v.name.toLowerCase().includes(this.movieNameFilter!.toLowerCase()))
+      : this.genreFilteredMovieList;
+  }
   ngOnInit(): void {
     this.movieData$ = this.movies.list.subscribe(data => {
       this.moviesList = data;
-      this.genreFilteredMovieList = this.genreFilter
-        ? this.moviesList.filter((v) => v.genre.includes(this.genreFilter!))
-        : this.moviesList;
+      this.updateFilteredArray();
     });
   }
 
@@ -45,10 +56,9 @@ export class MoviesListComponent implements OnInit, OnDestroy, AfterContentCheck
     this.movieData$.unsubscribe();
   }
 
+
   ngAfterContentChecked(): void {
-    this.genreFilteredMovieList = this.genreFilter
-      ? this.moviesList.filter((v) => v.genre.includes(this.genreFilter!))
-      : this.moviesList;
+    this.updateFilteredArray();
   }
 
 }
