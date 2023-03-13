@@ -4,7 +4,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {
-  BestMovieComponent,
+  BestMovieComponent, DetailedMovieComponent,
   MovieCardComponent,
   MoviesListComponent,
 } from './components';
@@ -13,6 +13,7 @@ import {HttpClientModule} from "@angular/common/http";
 import {CommonModule} from "@angular/common";
 import {MatButtonModule} from "@angular/material/button";
 import {MatIconModule} from "@angular/material/icon";
+import {MatDialogModule} from "@angular/material/dialog";
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import {MatIconModule} from "@angular/material/icon";
     MovieCardComponent,
     MoviesListComponent,
     BestMovieComponent,
+    DetailedMovieComponent,
   ],
   imports: [
     BrowserModule,
@@ -29,6 +31,7 @@ import {MatIconModule} from "@angular/material/icon";
     CommonModule,
     MatButtonModule,
     MatIconModule,
+    MatDialogModule,
 
   ],
   providers: [],

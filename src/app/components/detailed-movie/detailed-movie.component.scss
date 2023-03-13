@@ -1,0 +1,45 @@
+.mat-dialog-container {
+  padding: 15px 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(29, 24, 56, 0.1);
+}
+
+.mat-dialog-actions {
+  justify-content: flex-end;
+}
+
+.detailed {
+  position: relative;
+  margin: 0;
+  display: flex;
+  overflow: initial;
+  gap: 20px;
+  width: 800px;
+  background: #FFF;
+
+  .detailed__img {
+    width: 150px;
+    height: 100%;
+    border-radius: 5px;
+  }
+
+  .detailed__body {
+    height: 100%;
+  }
+
+  .detailed__actions {
+    position: absolute;
+    bottom: 15px;
+    right: 20px;
+    height: 36px;
+  }
+
+  .detailed__text {
+    margin-bottom: 10px;
+  }
+
+  .detailed__description {
+    padding-bottom: 46px;
+  }
+
+}

@@ -1,0 +1,17 @@
+<div mat-dialog-content class="detailed">
+  <div class="detailed__img">
+    <img [src]="imgSrc" [alt]="movie.name" class="detailed__img">
+  </div>
+  <div class="detailed__body">
+    <h1 mat-dialog-title class="detailed__title">{{movie.name}}</h1>
+    <p class="detailed__text">{{genreDescription}}</p>
+    <p class="detailed__text">{{movie.year}} </p>
+    <p class="detailed__description">{{movie.description}} </p>
+    <div mat-dialog-actions class="detailed__actions">
+      <button mat-button [color]="isFavorite ? 'accent': 'primary'" (click)="setBestMovie()">
+        {{isFavorite ? 'Удалить из лучших фильмов' : 'Выбрать лучшим фильмом'}}
+      </button>
+      <button mat-button mat-dialog-close color="accent">Закрыть</button>
+    </div>
+  </div>
+</div>
