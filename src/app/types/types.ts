@@ -3,5 +3,19 @@ export type movieT = {
   name: string
   year: number
   description: string
-  genre: number[]
+  genre: genresT[]
+}
+
+export enum genresT {
+  'драма' = 1,
+  'биография',
+  'история',
+  'фэнтези',
+  'приключения',
+  'боевик',
+  'мультфильм',
+  'комедия',
+  'триллер',
+  'детектив',
+  'фантастика',
 }
