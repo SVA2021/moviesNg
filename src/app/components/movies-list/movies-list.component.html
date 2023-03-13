@@ -1,0 +1,6 @@
+<section class="popular">
+  <h2 class="header">Популярные фильмы</h2>
+  <div class="popular__list">
+    <app-movie-card *ngFor="let movie of moviesList" [movie]="movie"></app-movie-card>
+  </div>
+</section>

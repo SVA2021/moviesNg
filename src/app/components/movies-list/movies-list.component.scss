@@ -1,0 +1,10 @@
+.popular {
+  margin: 40px auto;
+}
+
+.popular__list {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0;
+  gap: 15px 10px;
+}
