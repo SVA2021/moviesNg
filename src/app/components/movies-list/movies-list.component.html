@@ -1,6 +1,16 @@
 <section class="popular">
   <h2 class="header">Популярные фильмы</h2>
+  <div class="popular__filters">
+    <mat-form-field appearance="outline">
+      <mat-select [(value)]="genreFilter" placeholder="Все">
+        <mat-option>Все</mat-option>
+        <mat-option *ngFor="let genre of genresArr" [value]="genre.value">
+          {{genre.viewValue}}
+        </mat-option>
+      </mat-select>
+    </mat-form-field>
+  </div>
   <div class="popular__list">
-    <app-movie-card *ngFor="let movie of moviesList" [movie]="movie"></app-movie-card>
+    <app-movie-card *ngFor="let movie of genreFilteredMovieList" [movie]="movie"></app-movie-card>
   </div>
 </section>
